@@ -44,11 +44,12 @@ function addSelectedItemToCart() {
   let quantity = document.getElementById('quantity').value;
   // TODO: using those, add one item to the Cart
   let newItem = [product, quantity];
-  cart.push(newItem);
+  cart.items.push(newItem);
+  console.log(cart.items);
 }
 // TODO: Update the cart count in the header nav with the number of items in the Cart
 function updateCounter() {
-  let counter = document.getElementById('itemCounter');
+  let counter = document.getElementById('itemCount');
   counter.textContent = document.getElementById('quantity').value;
 }
 
