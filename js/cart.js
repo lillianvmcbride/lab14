@@ -1,14 +1,15 @@
 /* global Cart */
 'use strict';
 
-// Create an event listener so that when the delete link is clicked, the removeItemFromCart method is invoked.
+// !!!!!!Create an event listener so that when the delete link is clicked, the removeItemFromCart method is invoked.
 const table = document.getElementById('cart');
 table.addEventListener('click', removeItemFromCart);
-let cart;
+
 
 function loadCart() {
-  const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-  cart = new Cart(cartItems);
+  let cartItems = JSON.parse(localStorage.getItem('productString')) || [];
+  console.log(cartItems);
+  let cart = new Cart(cartItems[0], cartItems[1]);
 }
 
 // Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
